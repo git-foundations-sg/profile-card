@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HNG Profile Card</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div id="data-testid">
+            <div class="profile-card">
+                <!-- Profile Picture -->
+                <img src="https://res.cloudinary.com/dfczhaomn/image/upload/v1738154451/susanne_pl8pcz.png" alt="Profile Picture"
+                    data-testid="profilePicture">
+                <!-- Full Name -->
+                <h2 data-testid="fullName">Susan Githaiga</h2>
+                <!-- Job Title -->
+                <h3 data-testid="jobTitle">Frontend Software Developer</h3>
+                <!-- Short Bio -->
+                <p data-testid="shortBio">I am a highly motivated software
+                    developer with a strong background in crafting user-friendly
+                    interfaces (UI) and user experiences (UX). I leverage my
+                    skills in Javascript frameworks like React.js, Angular and
+                    Vue to build interactive interfaces and robust web
+                    applications. Additionally, my keen eye for detail and
+                    problem-solving mindset ensure a polished final product that
+                    aligns seamlessly with user needs.</p>
+                <!-- Current Location -->
+                <p data-testid="currentLocation">Nairobi, Kenya</p>
+                <!-- Email Address -->
+                <p data-testid="emailAddress">susangithaiga26@gmail.com</p>
+                <!-- Social Links -->
+                <div data-testid="socialLinks">
+                    <a
+                        href="https://www.linkedin.com/in/susan-githaiga-2832b11aa/"
+                        target="_blank">LinkedIn</a>
+                    <a href="https://github.com/SusanGithaigaN"
+                        target="_blank">GitHub</a>
+                </div>
+                <!-- Current Time in UTC -->
+                <div class="utc-time" data-testid="currentTimeUTC"></div>
+            </div>
+        </div>
+        <script>
+            function updateUTCTime() {
+                const utcTimeElement = document.querySelector('[data-testid="currentTimeUTC"]');
+                const now = new Date();
+                utcTimeElement.textContent = `Current UTC Time: ${now.toISOString()}`;
+            }
+    
+            updateUTCTime();
+            setInterval(updateUTCTime, 1000); // Update every second
+        </script>
+    </body>
+</html>
